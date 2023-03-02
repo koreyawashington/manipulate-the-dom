@@ -17,32 +17,70 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // Do all of your work inside the document.addEventListener  
 
   // Part 1
-
+const mainTitle = document.getElementById("main-title")
+mainTitle.innerHTML = "Welcome to the DOM Homepage"
 
   // Part 2
-
-
+const theBody = document.querySelector('body')
+theBody.style.backgroundColor = 'blue'
   // Part 3
-
+const domFavoriteThings = document.getElementById('favorite-things');
+domFavoriteThings.removeChild(domFavoriteThings.lastElementChild)
+console.log(domFavoriteThings);
 
   // Part 4
-
-
+const specialTitle = document.querySelectorAll('.special-title')
+// console.log(specialTitle);
+specialTitle.forEach(title => {
+  title.style.fontSize = '2rem';
+});
   // Part 5
-
-
+const pastRaces = document.getElementById("past-races");
+console.log(pastRaces);
+pastRaces.children[3].remove();
   // Part 6
+const li = document.createElement('li');
+li.textContent='Pittsburgh';
+console.log(li);
+pastRaces.appendChild(li);
 
 
   // Part 7
+const pghDiv = document.createElement('div');
+pghDiv.className = ('blog-post');
+const pghHeader = document.createElement('h1');
+pghHeader.textContent = 'Welcome to Pittsburgh!';
 
+const pghPara = document.createAttribute('p');
+
+pghPara.textContent = 'Welcome to the Steelers Nation.';
+
+
+pghPara.textContent = 'Welcome to the Steelers Nation. Home of Kennywood, The Point, and The Steel Mills! '
+pghDiv.append(pghHeader);
+pghDiv.append(pghPara);
+console.log(pghDiv);
+console.log(pghHeader);
+console.log(pghPara);
+
+main = document.getElementsByClassName('main')[0];
+main.append(pghDiv);
 
   // Part 8
-
+const quotesTitle = document.getElementById('quote-title');
+quotesTitle.addEventListener('click',randomQuote);;
 
   // Part 9
-
-
+const blogPost = document.querySelectorAll('.blog-post');
+console.log(blogPost);
+blogPost.forEach(div => {
+  div.addEventListener('mouseout', function(event){
+    event.target.classList.toggle('purple');
+  })
+div.addEventListener('mouseenter',function(event){
+  event.target.classList.toggle('red');
+})
 
 
 });
+})
